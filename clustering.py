@@ -1,22 +1,14 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Sep 19 16:08:14 2024
-
-@author: olympio
-"""
-import os
-os.chdir('/home/olympio/Documents/GitHub/Hypergraphs/Experiments/Ricci_Hypergraphs')
 import networkx as nx
 import hypernetx as hnx
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from GraphRicciCurvature.OllivierRicci import OllivierRicci
-from GraphRicciCurvature.OllivierRicci_hypergraphs_edges import OllivierRicciHypergraphEdges
-from GraphRicciCurvature.OllivierRicci_hypergraphs_nodes import OllivierRicciHypergraphNodes
-from GraphRicciCurvature.util import cut_graph_by_cutoff
+import sys
+sys.path.insert(0, 'HGRicciCurvature')
+from OllivierRicci_hypergraphs_edges import OllivierRicciHypergraphEdges
+from OllivierRicci_hypergraphs_nodes import OllivierRicciHypergraphNodes
+
 from sklearn import metrics
 import itertools
 
@@ -300,7 +292,7 @@ A_rf_edges = nx.adjacency_matrix(G_rf_edges).todense()
  #%%
 
 cuts_arr = np.arange(1, 1.2, 0.01)    
-# print("Best NMI nodes", best_NMI(cuts_arr, Y, H, G_rf_nodes))
+print("Best NMI nodes", best_NMI(cuts_arr, Y, H, G_rf_nodes))
 print("Best NMI edges", best_NMI(cuts_arr, Y, H, G_rf_edges))
     
 # import pickle

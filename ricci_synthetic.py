@@ -1,23 +1,15 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Sep 19 16:08:14 2024
-
-@author: olympio
-"""
-import os
-os.chdir('/home/olympio/Documents/GitHub/Hypergraphs/Experiments/Ricci_Hypergraphs')
 import networkx as nx
 import hypernetx as hnx
 import networkit as nk
 
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
-from GraphRicciCurvature.OllivierRicci import OllivierRicci
-from GraphRicciCurvature.OllivierRicci_hypergraphs_edges import OllivierRicciHypergraphEdges
-from GraphRicciCurvature.OllivierRicci_hypergraphs_nodes import OllivierRicciHypergraphNodes
-from GraphRicciCurvature.util import cut_graph_by_cutoff
+
+import sys
+sys.path.insert(0, 'HGRicciCurvature')
+from OllivierRicci_hypergraphs_edges import OllivierRicciHypergraphEdges
+from OllivierRicci_hypergraphs_nodes import OllivierRicciHypergraphNodes
+
 from sklearn import metrics
 import itertools
 
